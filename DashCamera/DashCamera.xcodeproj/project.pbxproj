@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C33B96011FED7EF600D6FDA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33B96001FED7EF600D6FDA5 /* AppDelegate.m */; };
+		C33B96041FED7EF600D6FDA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33B96031FED7EF600D6FDA5 /* ViewController.m */; };
+		C33B96071FED7EF600D6FDA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33B96051FED7EF600D6FDA5 /* Main.storyboard */; };
+		C33B960A1FED7EF600D6FDA5 /* DashCamera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C33B96081FED7EF600D6FDA5 /* DashCamera.xcdatamodeld */; };
+		C33B960C1FED7EF600D6FDA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33B960B1FED7EF600D6FDA5 /* Assets.xcassets */; };
+		C33B960F1FED7EF600D6FDA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33B960D1FED7EF600D6FDA5 /* LaunchScreen.storyboard */; };
+		C33B96121FED7EF600D6FDA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33B96111FED7EF600D6FDA5 /* main.m */; };
+		C33B961A1FED908200D6FDA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33B96191FED908200D6FDA5 /* AVFoundation.framework */; };
+		C3FB53B61FFECB44007955F4 /* CameraAndPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB53B41FFECB44007955F4 /* CameraAndPhoto.m */; };
+		C3FB53CF1FFED02F007955F4 /* res_btn_mic_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C71FFED02E007955F4 /* res_btn_mic_off.png */; };
+		C3FB53D01FFED02F007955F4 /* res_btn_camera_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C81FFED02E007955F4 /* res_btn_camera_rotate.png */; };
+		C3FB53D11FFED02F007955F4 /* res_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C91FFED02E007955F4 /* res_background.png */; };
+		C3FB53D21FFED02F007955F4 /* res_btn_record.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53CA1FFED02F007955F4 /* res_btn_record.png */; };
+		C3FB53D31FFED02F007955F4 /* res_btn_recording.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53CB1FFED02F007955F4 /* res_btn_recording.png */; };
+		C3FB53D41FFED02F007955F4 /* res_btn_save.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53CC1FFED02F007955F4 /* res_btn_save.png */; };
+		C3FB53D51FFED02F007955F4 /* res_btn_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53CD1FFED02F007955F4 /* res_btn_menu.png */; };
+		C3FB53D61FFED02F007955F4 /* res_btn_mic_on.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53CE1FFED02F007955F4 /* res_btn_mic_on.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C33B95FC1FED7EF600D6FDA5 /* DashCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33B95FF1FED7EF600D6FDA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C33B96001FED7EF600D6FDA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C33B96021FED7EF600D6FDA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C33B96031FED7EF600D6FDA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C33B96061FED7EF600D6FDA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C33B96091FED7EF600D6FDA5 /* DashCamera.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DashCamera.xcdatamodel; sourceTree = "<group>"; };
+		C33B960B1FED7EF600D6FDA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C33B960E1FED7EF600D6FDA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C33B96101FED7EF600D6FDA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33B96111FED7EF600D6FDA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C33B96191FED908200D6FDA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C3FB53B41FFECB44007955F4 /* CameraAndPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraAndPhoto.m; path = DashCamera/Class/Utils/CameraAndPhoto.m; sourceTree = SOURCE_ROOT; };
+		C3FB53B51FFECB44007955F4 /* CameraAndPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraAndPhoto.h; path = DashCamera/Class/Utils/CameraAndPhoto.h; sourceTree = SOURCE_ROOT; };
+		C3FB53C71FFED02E007955F4 /* res_btn_mic_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_mic_off.png; path = Resources/res_btn_mic_off.png; sourceTree = "<group>"; };
+		C3FB53C81FFED02E007955F4 /* res_btn_camera_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_camera_rotate.png; path = Resources/res_btn_camera_rotate.png; sourceTree = "<group>"; };
+		C3FB53C91FFED02E007955F4 /* res_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_background.png; path = Resources/res_background.png; sourceTree = "<group>"; };
+		C3FB53CA1FFED02F007955F4 /* res_btn_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_record.png; path = Resources/res_btn_record.png; sourceTree = "<group>"; };
+		C3FB53CB1FFED02F007955F4 /* res_btn_recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_recording.png; path = Resources/res_btn_recording.png; sourceTree = "<group>"; };
+		C3FB53CC1FFED02F007955F4 /* res_btn_save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_save.png; path = Resources/res_btn_save.png; sourceTree = "<group>"; };
+		C3FB53CD1FFED02F007955F4 /* res_btn_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_menu.png; path = Resources/res_btn_menu.png; sourceTree = "<group>"; };
+		C3FB53CE1FFED02F007955F4 /* res_btn_mic_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_mic_on.png; path = Resources/res_btn_mic_on.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C33B95F91FED7EF600D6FDA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C33B961A1FED908200D6FDA5 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C33B95F31FED7EF600D6FDA5 = {
+			isa = PBXGroup;
+			children = (
+				C33B95FE1FED7EF600D6FDA5 /* DashCamera */,
+				C33B95FD1FED7EF600D6FDA5 /* Products */,
+				C33B96181FED908200D6FDA5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C33B95FD1FED7EF600D6FDA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C33B95FC1FED7EF600D6FDA5 /* DashCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C33B95FE1FED7EF600D6FDA5 /* DashCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C33B961F1FEDD1AF00D6FDA5 /* Class */,
+				C3FB53D71FFED041007955F4 /* Resources */,
+				C33B95FF1FED7EF600D6FDA5 /* AppDelegate.h */,
+				C33B96001FED7EF600D6FDA5 /* AppDelegate.m */,
+				C33B96021FED7EF600D6FDA5 /* ViewController.h */,
+				C33B96031FED7EF600D6FDA5 /* ViewController.m */,
+				C33B96051FED7EF600D6FDA5 /* Main.storyboard */,
+				C33B960B1FED7EF600D6FDA5 /* Assets.xcassets */,
+				C33B960D1FED7EF600D6FDA5 /* LaunchScreen.storyboard */,
+				C33B96101FED7EF600D6FDA5 /* Info.plist */,
+				C33B96111FED7EF600D6FDA5 /* main.m */,
+				C33B96081FED7EF600D6FDA5 /* DashCamera.xcdatamodeld */,
+			);
+			path = DashCamera;
+			sourceTree = "<group>";
+		};
+		C33B96181FED908200D6FDA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C33B96191FED908200D6FDA5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C33B961E1FEDD19300D6FDA5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3FB53B51FFECB44007955F4 /* CameraAndPhoto.h */,
+				C3FB53B41FFECB44007955F4 /* CameraAndPhoto.m */,
+			);
+			name = Utils;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		C33B961F1FEDD1AF00D6FDA5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				C33B961E1FEDD19300D6FDA5 /* Utils */,
+			);
+			name = Class;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		C3FB53D71FFED041007955F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3FB53C91FFED02E007955F4 /* res_background.png */,
+				C3FB53C81FFED02E007955F4 /* res_btn_camera_rotate.png */,
+				C3FB53CD1FFED02F007955F4 /* res_btn_menu.png */,
+				C3FB53C71FFED02E007955F4 /* res_btn_mic_off.png */,
+				C3FB53CE1FFED02F007955F4 /* res_btn_mic_on.png */,
+				C3FB53CA1FFED02F007955F4 /* res_btn_record.png */,
+				C3FB53CB1FFED02F007955F4 /* res_btn_recording.png */,
+				C3FB53CC1FFED02F007955F4 /* res_btn_save.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C33B95FB1FED7EF600D6FDA5 /* DashCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C33B96151FED7EF600D6FDA5 /* Build configuration list for PBXNativeTarget "DashCamera" */;
+			buildPhases = (
+				C33B95F81FED7EF600D6FDA5 /* Sources */,
+				C33B95F91FED7EF600D6FDA5 /* Frameworks */,
+				C33B95FA1FED7EF600D6FDA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DashCamera;
+			productName = DashCamera;
+			productReference = C33B95FC1FED7EF600D6FDA5 /* DashCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C33B95F41FED7EF600D6FDA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = WAC;
+				TargetAttributes = {
+					C33B95FB1FED7EF600D6FDA5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = C33B95F71FED7EF600D6FDA5 /* Build configuration list for PBXProject "DashCamera" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C33B95F31FED7EF600D6FDA5;
+			productRefGroup = C33B95FD1FED7EF600D6FDA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C33B95FB1FED7EF600D6FDA5 /* DashCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C33B95FA1FED7EF600D6FDA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FB53CF1FFED02F007955F4 /* res_btn_mic_off.png in Resources */,
+				C3FB53D01FFED02F007955F4 /* res_btn_camera_rotate.png in Resources */,
+				C3FB53D11FFED02F007955F4 /* res_background.png in Resources */,
+				C3FB53D21FFED02F007955F4 /* res_btn_record.png in Resources */,
+				C3FB53D31FFED02F007955F4 /* res_btn_recording.png in Resources */,
+				C3FB53D41FFED02F007955F4 /* res_btn_save.png in Resources */,
+				C3FB53D51FFED02F007955F4 /* res_btn_menu.png in Resources */,
+				C3FB53D61FFED02F007955F4 /* res_btn_mic_on.png in Resources */,
+				C33B960F1FED7EF600D6FDA5 /* LaunchScreen.storyboard in Resources */,
+				C33B960C1FED7EF600D6FDA5 /* Assets.xcassets in Resources */,
+				C33B96071FED7EF600D6FDA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C33B95F81FED7EF600D6FDA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FB53B61FFECB44007955F4 /* CameraAndPhoto.m in Sources */,
+				C33B96041FED7EF600D6FDA5 /* ViewController.m in Sources */,
+				C33B960A1FED7EF600D6FDA5 /* DashCamera.xcdatamodeld in Sources */,
+				C33B96121FED7EF600D6FDA5 /* main.m in Sources */,
+				C33B96011FED7EF600D6FDA5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C33B96051FED7EF600D6FDA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C33B96061FED7EF600D6FDA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C33B960D1FED7EF600D6FDA5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C33B960E1FED7EF600D6FDA5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C33B96131FED7EF600D6FDA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C33B96141FED7EF600D6FDA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C33B96161FED7EF600D6FDA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D4J7AW2S69;
+				INFOPLIST_FILE = DashCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wac.DashCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8cea259d-8bca-404e-b0bd-534ac728bb88";
+				PROVISIONING_PROFILE_SPECIFIER = All_Dev_160129;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C33B96171FED7EF600D6FDA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D4J7AW2S69;
+				INFOPLIST_FILE = DashCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wac.DashCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8cea259d-8bca-404e-b0bd-534ac728bb88";
+				PROVISIONING_PROFILE_SPECIFIER = All_Dev_160129;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C33B95F71FED7EF600D6FDA5 /* Build configuration list for PBXProject "DashCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33B96131FED7EF600D6FDA5 /* Debug */,
+				C33B96141FED7EF600D6FDA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C33B96151FED7EF600D6FDA5 /* Build configuration list for PBXNativeTarget "DashCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C33B96161FED7EF600D6FDA5 /* Debug */,
+				C33B96171FED7EF600D6FDA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C33B96081FED7EF600D6FDA5 /* DashCamera.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C33B96091FED7EF600D6FDA5 /* DashCamera.xcdatamodel */,
+			);
+			currentVersion = C33B96091FED7EF600D6FDA5 /* DashCamera.xcdatamodel */;
+			path = DashCamera.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C33B95F41FED7EF600D6FDA5 /* Project object */;
+}
