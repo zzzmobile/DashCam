@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "LLSimpleCamera.h"
+
+@class GADBannerView;
 
 @interface ViewController : UIViewController
 
@@ -18,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;
 @property (weak, nonatomic) IBOutlet UIButton *btnSave;
 
+@property (weak, nonatomic) IBOutlet UIView *adsBannerView;
+
 @property (weak, nonatomic) IBOutlet UIView *vwRecTime;
 @property (weak, nonatomic) IBOutlet UIView *vwTraffic;
 
@@ -27,6 +32,8 @@
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
+
+- (IBAction)onShowSettings:(id)sender;
 
 @end
 
