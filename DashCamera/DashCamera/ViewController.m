@@ -11,10 +11,11 @@
 #import "SettingsViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <CoreLocation/CoreLocation.h>
 
 @import GoogleMobileAds;
 
-@interface ViewController () <UINavigationControllerDelegate, GADBannerViewDelegate>
+@interface ViewController () <UINavigationControllerDelegate, GADBannerViewDelegate, CLLocationManagerDelegate>
 {
     NSTimer *videoTimer;
     NSTimer *recordTimer;
@@ -22,6 +23,11 @@
     
     NSUInteger totalDiskSize;
     NSUInteger freeDiskSize;
+    
+    CLLocationManager *locManager;
+    CLLocation *userLoc;
+    CLHeading *userHeading;
+    CLLocationSpeed carSpeed;
 }
 
 @property (strong, nonatomic) LLSimpleCamera *camera;
@@ -30,6 +36,7 @@
 @property (assign, nonatomic) BOOL front;
 @property (assign, nonatomic) BOOL noSound;
 @property (assign, nonatomic) BOOL captureVideo;
+@property (assign, nonatomic) BOOL traffic;
 @property (weak, nonatomic) IBOutlet UIView *operationBgView;
 @property (nonatomic, strong) GADBannerView *bannerView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
@@ -43,6 +50,7 @@
     [self initialize];
     [self initButtons];
     [self initAds];
+    [self initLocationManager];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +87,8 @@
     
     totalDiskSize = [self getTotalDiskSize];
     [self refreshStorageBar];
+    
+    self.traffic = YES;
 }
 
 - (void)initButtons
@@ -108,6 +118,15 @@
     [self.view bringSubviewToFront:self.adsBannerView];
 }
 
+- (void)initLocationManager
+{
+    locManager = [[CLLocationManager alloc] init];
+    locManager.delegate = self;
+    locManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locManager startUpdatingLocation];
+    [locManager startUpdatingHeading];
+}
+
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     bannerView.alpha = 0;
     [UIView animateWithDuration:1.0 animations:^{
@@ -134,6 +153,24 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    userLoc = [locations firstObject];
+    if (userLoc != nil) {
+        carSpeed = userLoc.speed;
+        [self refreshTrafficData];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    userHeading = newHeading;
+    if (userHeading != nil) {
+        [self refreshTrafficData];
+    }
+}
+
+
 - (IBAction)triggerMic:(id)sender {
     self.btnMic.selected = !self.btnMic.selected;
     self.noSound = !self.noSound;
@@ -143,9 +180,6 @@
 - (IBAction)triggerRotateCamera:(id)sender {
     _front = !_front;
     [self.camera togglePosition];
-}
-
-- (IBAction)openMenu:(id)sender {
 }
 
 - (IBAction)triggerRecord:(id)sender {
@@ -188,6 +222,7 @@
 }
 
 - (IBAction)saveVideo:(id)sender {
+    
 }
 
 - (NSURL *)applicationDocumentsDirectory
@@ -221,7 +256,19 @@
     [self refreshStorageBar];
 }
 
+- (void)refreshTrafficData
+{
+    if (self.traffic) {
+        int mph = (int)(carSpeed / 3600);
+        NSString *strSpeed = [NSString stringWithFormat:@"%i mph", mph];
+        [self.lblSpeed setText:strSpeed];
+    }
+}
+
 - (IBAction)onShowSettings:(id)sender {
+    if (self.captureVideo)
+        return;
+    
     SettingsViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];

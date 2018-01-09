@@ -11,10 +11,14 @@
 #import "VideoListViewController.h"
 #import "Tools.h"
 
-@interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate>
+@import GoogleMobileAds;
+
+@interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate>
 {
     NSMutableArray *settingTableData;
 }
+
+@property (nonatomic, strong) GADBannerView *bannerView;
 
 @end
 
@@ -36,6 +40,7 @@ typedef NS_ENUM(NSInteger, SectionType)
     // Do any additional setup after loading the view.
     [self initSettingTable];
     [self initialize];
+    [self initAds];
 }
 
 - (void)initialize
@@ -48,6 +53,20 @@ typedef NS_ENUM(NSInteger, SectionType)
     
     [Tools addLeftNavBarButtonWithImage:@"back_button" title:nil forVC:self action:@selector(onBack)];
     self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void)initAds
+{
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-6714239015427657/9122272249";
+    self.bannerView.rootViewController = self;
+    self.bannerView.delegate = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+    
+    [self.adsView addSubview:self.bannerView];
+    self.adsView = self.bannerView;
+    
+    [self.view bringSubviewToFront:self.adsView];
 }
 
 - (void)viewWillAppear:(BOOL)animated

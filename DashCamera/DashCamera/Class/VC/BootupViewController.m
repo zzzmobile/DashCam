@@ -9,7 +9,12 @@
 #import "BootupViewController.h"
 #import "../../ViewController.h"
 
-@interface BootupViewController ()
+@import GoogleMobileAds;
+
+@interface BootupViewController () <GADRewardBasedVideoAdDelegate>
+{
+    
+}
 
 @end
 
@@ -35,6 +40,8 @@ UIAlertController *alertController;
                                        userInfo:nil
                                         repeats:NO];
     });
+
+    [self initGoogleAdsVideo];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,8 +60,37 @@ UIAlertController *alertController;
 }
 
 - (IBAction)startApp:(id)sender {
+    if ([[GADRewardBasedVideoAd sharedInstance] isReady]) {
+        [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:self];
+    }
+}
+
+- (void)initGoogleAdsVideo
+{
+    [GADRewardBasedVideoAd sharedInstance].delegate = self;
+    if (![[GADRewardBasedVideoAd sharedInstance] isReady]) {
+        GADRequest *request = [GADRequest request];
+        [[GADRewardBasedVideoAd sharedInstance] loadRequest:request withAdUnitID:@"ca-app-pub-6714239015427657/7871989509"];
+    }
+}
+
+- (void)showMainScreen
+{
     ViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self presentViewController:vc animated:NO completion:nil];
+}
+
+- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+{
+    
+}
+
+- (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
+    [self showMainScreen];
+}
+
+- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd didFailToLoadWithError:(NSError *)error {
+    [self showMainScreen];
 }
 
 @end

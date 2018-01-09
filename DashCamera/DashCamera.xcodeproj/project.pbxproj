@@ -47,6 +47,7 @@
 		C3FB541F2002F358007955F4 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB541E2002F358007955F4 /* VideoCell.m */; };
 		C3FB54232002F55A007955F4 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB54222002F55A007955F4 /* VideoModel.m */; };
 		C3FB542620031960007955F4 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FB542520031960007955F4 /* Tools.m */; };
+		C3FB542820042099007955F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FB542720042099007955F4 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		C3FB54222002F55A007955F4 /* VideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		C3FB542420031960007955F4 /* Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = Class/Utils/Tools.h; sourceTree = "<group>"; };
 		C3FB542520031960007955F4 /* Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Tools.m; path = Class/Utils/Tools.m; sourceTree = "<group>"; };
+		C3FB542720042099007955F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CAE1314F4F38F63B0082DB3E /* Pods-DashCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-DashCamera/Pods-DashCamera.release.xcconfig"; sourceTree = "<group>"; };
 		F8041DDC497E6A9BD63F2566 /* libPods-DashCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DashCamera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				C3FB53E920001334007955F4 /* AudioToolbox.framework in Frameworks */,
 				C33B961A1FED908200D6FDA5 /* AVFoundation.framework in Frameworks */,
 				C3FB53EB20001342007955F4 /* CoreGraphics.framework in Frameworks */,
+				C3FB542820042099007955F4 /* CoreLocation.framework in Frameworks */,
 				C3FB53ED2000134A007955F4 /* CoreMedia.framework in Frameworks */,
 				C3FB53EF20001352007955F4 /* CoreTelephony.framework in Frameworks */,
 				C3FB53F22000135E007955F4 /* EventKit.framework in Frameworks */,
@@ -172,6 +175,7 @@
 		C33B96181FED908200D6FDA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3FB542720042099007955F4 /* CoreLocation.framework */,
 				C3FB53FA20001381007955F4 /* SystemConfiguration.framework */,
 				C3FB53F820001379007955F4 /* StoreKit.framework */,
 				C3FB53F62000136F007955F4 /* MessageUI.framework */,
@@ -396,7 +400,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DashCamera/Pods-DashCamera-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/OLCVideoPlayer/OLCVideoPlayer.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/OLCVideoPlayer/OLCVideoPlayer.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
