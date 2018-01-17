@@ -10,31 +10,37 @@
 #import "../../ViewController.h"
 #import "AppSetting.h"
 
-UIAlertController *alertController;
+
+@interface BootupViewController ()
+{
+    NSInteger counter;
+}
+
+@end
+
 
 @implementation BootupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *message = @"Obey all traffic laws when using this application. For your safety, do not operate this app while driving. Please make yoru adjustments while parked.";
-    alertController = [UIAlertController alertControllerWithTitle:@"Message"
-                                                               message:message
-                                                        preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alertController addAction:okayButton];
-
+    counter = 30;
     if (![AppSetting isSetted]) {
         [AppSetting initSetting];
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self presentViewController:alertController animated:YES completion:nil];
-        [NSTimer scheduledTimerWithTimeInterval:45.0
+        [NSTimer scheduledTimerWithTimeInterval:30.0
                                          target:self
-                                       selector:@selector(hideAlertController)
+                                       selector:@selector(showMainScreen)
                                        userInfo:nil
                                         repeats:NO];
+
+        [NSTimer scheduledTimerWithTimeInterval:1.0
+                                         target:self
+                                       selector:@selector(downCount)
+                                       userInfo:nil
+                                        repeats:YES];
     });
 }
 
@@ -48,13 +54,7 @@ UIAlertController *alertController;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)hideAlertController
-{
-    [alertController dismissViewControllerAnimated:NO completion:nil];
-    [self showMainScreen];
-}
-
-- (IBAction)startApp:(id)sender {
+- (IBAction)onClickStart:(id)sender {
     [self showMainScreen];
 }
 
@@ -62,6 +62,16 @@ UIAlertController *alertController;
 {
     ViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self presentViewController:vc animated:NO completion:nil];
+}
+
+- (void)downCount
+{
+    if (counter == 0) {
+        return;
+    }
+
+    counter --;
+    [self.lblCounter setText:[NSString stringWithFormat:@"%li", counter]];
 }
 
 @end

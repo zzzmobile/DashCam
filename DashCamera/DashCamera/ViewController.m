@@ -473,9 +473,9 @@
     }
 
     - (void)refreshStorageBar {
-        NSInteger total = totalDiskSize;
+        NSUInteger total = totalDiskSize;
         freeDiskSize = [self getFreeDiskSize];
-        NSInteger used = totalDiskSize - freeDiskSize;
+        NSUInteger used = totalDiskSize - freeDiskSize;
 
         float totalSize = (total / 1024.0f) / 1024;
         float freeSize = (freeDiskSize / 1024.0f) / 1024;
@@ -487,11 +487,10 @@
 
         int minutes = (int)(freeSize / 2) / 60;
         NSString *strMinutes = [NSString stringWithFormat:@"(%i minutes)", minutes];
-        NSString *strUnit = @"MB,  ";
+        NSString *strUnit = @"MB  ";
         NSString *strFree = @"";
-        strUnit = @"MB";
         if (freeSize >= 1024) {
-            strUnit = @"GB";
+            strUnit = @"GB  ";
             freeSize = freeSize / 1024;
         }
         strFree = [NSString stringWithFormat:@"Available : %.1f", freeSize];

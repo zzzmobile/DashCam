@@ -10,4 +10,6 @@
 
 @interface BootupViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *lblCounter;
+
 @end

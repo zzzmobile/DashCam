@@ -11,8 +11,13 @@
 #import "VideoListViewController.h"
 #import "Tools.h"
 
-@interface MenuViewController ()
+@import GoogleMobileAds;
 
+@interface MenuViewController () <GADBannerViewDelegate>
+
+@property (nonatomic, strong) UIView *adsView;
+@property (nonatomic, strong) GADBannerView *bannerView;
+    
 @end
 
 @implementation MenuViewController
@@ -27,6 +32,7 @@ typedef NS_ENUM(NSInteger, SectionType)
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialize];
+    [self initAdsView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -56,6 +62,38 @@ typedef NS_ENUM(NSInteger, SectionType)
     
     [Tools addLeftNavBarButtonWithImage:@"back_button" title:nil forVC:self action:@selector(onBack)];
     self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void)initAdsView
+{
+    self.adsView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-6714239015427657/9122272249";
+    self.bannerView.rootViewController = self;
+    self.bannerView.delegate = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+    [self addBannerViewToView:self.bannerView];
+}
+
+- (void)addBannerViewToView:(UIView *)bannerView {
+    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:bannerView];
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem:bannerView
+                                                             attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.bottomLayoutGuide
+                                                             attribute:NSLayoutAttributeTop
+                                                            multiplier:1
+                                                              constant:0],
+                                [NSLayoutConstraint constraintWithItem:bannerView
+                                                             attribute:NSLayoutAttributeCenterX
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeCenterX
+                                                            multiplier:1
+                                                              constant:0]
+                                ]];
 }
 
 - (void)onBack
