@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		07CAC9C3A6565DAF0AA1CFFB /* libPods-DashCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8041DDC497E6A9BD63F2566 /* libPods-DashCamera.a */; };
+		C3031538200B5A7E0049EBE8 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3031537200B5A7E0049EBE8 /* MenuViewController.m */; };
+		C32D75EF2006062000DC2F7C /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C32D75EE2006062000DC2F7C /* AppSetting.m */; };
+		C32D75F42006E41700DC2F7C /* SettingValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C32D75F22006E41700DC2F7C /* SettingValueCell.m */; };
+		C32D75F52006E41700DC2F7C /* SettingValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32D75F32006E41700DC2F7C /* SettingValueCell.xib */; };
 		C33B96011FED7EF600D6FDA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C33B96001FED7EF600D6FDA5 /* AppDelegate.m */; };
 		C33B96071FED7EF600D6FDA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33B96051FED7EF600D6FDA5 /* Main.storyboard */; };
 		C33B960A1FED7EF600D6FDA5 /* DashCamera.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C33B96081FED7EF600D6FDA5 /* DashCamera.xcdatamodeld */; };
@@ -15,6 +19,9 @@
 		C33B960F1FED7EF600D6FDA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33B960D1FED7EF600D6FDA5 /* LaunchScreen.storyboard */; };
 		C33B96121FED7EF600D6FDA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C33B96111FED7EF600D6FDA5 /* main.m */; };
 		C33B961A1FED908200D6FDA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33B96191FED908200D6FDA5 /* AVFoundation.framework */; };
+		C34168CC200E882E0037275B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C34168CB200E882E0037275B /* libsqlite3.tbd */; };
+		C34168CF200E88790037275B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C34168CE200E88790037275B /* DBManager.m */; };
+		C34168D3200F47200037275B /* VideoTableRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C34168D2200F47200037275B /* VideoTableRecord.m */; };
 		C3FB53CF1FFED02F007955F4 /* res_btn_mic_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C71FFED02E007955F4 /* res_btn_mic_off.png */; };
 		C3FB53D01FFED02F007955F4 /* res_btn_camera_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C81FFED02E007955F4 /* res_btn_camera_rotate.png */; };
 		C3FB53D11FFED02F007955F4 /* res_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C3FB53C91FFED02E007955F4 /* res_background.png */; };
@@ -52,6 +59,13 @@
 
 /* Begin PBXFileReference section */
 		48E8BBF94F5ED80C2EAEA508 /* Pods-DashCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DashCamera/Pods-DashCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		C3031536200B5A7E0049EBE8 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Class/VC/MenuViewController.h; sourceTree = "<group>"; };
+		C3031537200B5A7E0049EBE8 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Class/VC/MenuViewController.m; sourceTree = "<group>"; };
+		C32D75ED2006062000DC2F7C /* AppSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppSetting.h; path = Class/Utils/AppSetting.h; sourceTree = "<group>"; };
+		C32D75EE2006062000DC2F7C /* AppSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppSetting.m; path = Class/Utils/AppSetting.m; sourceTree = "<group>"; };
+		C32D75F12006E41700DC2F7C /* SettingValueCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SettingValueCell.h; path = DashCamera/Class/View/SettingValueCell.h; sourceTree = SOURCE_ROOT; };
+		C32D75F22006E41700DC2F7C /* SettingValueCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SettingValueCell.m; path = DashCamera/Class/View/SettingValueCell.m; sourceTree = SOURCE_ROOT; };
+		C32D75F32006E41700DC2F7C /* SettingValueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingValueCell.xib; path = DashCamera/Class/View/SettingValueCell.xib; sourceTree = SOURCE_ROOT; };
 		C33B95FC1FED7EF600D6FDA5 /* DashCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33B95FF1FED7EF600D6FDA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C33B96001FED7EF600D6FDA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,6 +76,11 @@
 		C33B96101FED7EF600D6FDA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33B96111FED7EF600D6FDA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C33B96191FED908200D6FDA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C34168CB200E882E0037275B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C34168CD200E88790037275B /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = Class/Database/DBManager.h; sourceTree = "<group>"; };
+		C34168CE200E88790037275B /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = Class/Database/DBManager.m; sourceTree = "<group>"; };
+		C34168D1200F47200037275B /* VideoTableRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoTableRecord.h; path = Class/Database/VideoTableRecord.h; sourceTree = "<group>"; };
+		C34168D2200F47200037275B /* VideoTableRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoTableRecord.m; path = Class/Database/VideoTableRecord.m; sourceTree = "<group>"; };
 		C3FB53C71FFED02E007955F4 /* res_btn_mic_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_mic_off.png; path = Resources/res_btn_mic_off.png; sourceTree = "<group>"; };
 		C3FB53C81FFED02E007955F4 /* res_btn_camera_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_camera_rotate.png; path = Resources/res_btn_camera_rotate.png; sourceTree = "<group>"; };
 		C3FB53C91FFED02E007955F4 /* res_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_background.png; path = Resources/res_background.png; sourceTree = "<group>"; };
@@ -117,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34168CC200E882E0037275B /* libsqlite3.tbd in Frameworks */,
 				C3FB53E720000E16007955F4 /* AdSupport.framework in Frameworks */,
 				C3FB53E920001334007955F4 /* AudioToolbox.framework in Frameworks */,
 				C33B961A1FED908200D6FDA5 /* AVFoundation.framework in Frameworks */,
@@ -175,6 +195,7 @@
 		C33B96181FED908200D6FDA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C34168CB200E882E0037275B /* libsqlite3.tbd */,
 				C3FB542720042099007955F4 /* CoreLocation.framework */,
 				C3FB53FA20001381007955F4 /* SystemConfiguration.framework */,
 				C3FB53F820001379007955F4 /* StoreKit.framework */,
@@ -191,6 +212,17 @@
 				F8041DDC497E6A9BD63F2566 /* libPods-DashCamera.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C34168D0200E88820037275B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C34168CD200E88790037275B /* DBManager.h */,
+				C34168CE200E88790037275B /* DBManager.m */,
+				C34168D1200F47200037275B /* VideoTableRecord.h */,
+				C34168D2200F47200037275B /* VideoTableRecord.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		C3FB53D71FFED041007955F4 /* Resources */ = {
@@ -211,6 +243,7 @@
 		C3FB53DC1FFEFED1007955F4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				C34168D0200E88820037275B /* Database */,
 				C3FB54202002F533007955F4 /* Model */,
 				C3FB53DD1FFEFEDF007955F4 /* VC */,
 				C3FB54152002CF35007955F4 /* View */,
@@ -232,6 +265,8 @@
 				C3FB54132002C514007955F4 /* VideoListViewController.m */,
 				C3FB541A2002E3FE007955F4 /* VideoViewController.h */,
 				C3FB541B2002E3FE007955F4 /* VideoViewController.m */,
+				C3031536200B5A7E0049EBE8 /* MenuViewController.h */,
+				C3031537200B5A7E0049EBE8 /* MenuViewController.m */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -249,6 +284,8 @@
 				C3FB53E31FFF0161007955F4 /* CameraAndPhoto.m */,
 				C3FB542420031960007955F4 /* Tools.h */,
 				C3FB542520031960007955F4 /* Tools.m */,
+				C32D75ED2006062000DC2F7C /* AppSetting.h */,
+				C32D75EE2006062000DC2F7C /* AppSetting.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -260,6 +297,9 @@
 				C3FB54182002CFC5007955F4 /* SettingTableViewCell.m */,
 				C3FB541D2002F358007955F4 /* VideoCell.h */,
 				C3FB541E2002F358007955F4 /* VideoCell.m */,
+				C32D75F12006E41700DC2F7C /* SettingValueCell.h */,
+				C32D75F22006E41700DC2F7C /* SettingValueCell.m */,
+				C32D75F32006E41700DC2F7C /* SettingValueCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -316,7 +356,7 @@
 				TargetAttributes = {
 					C33B95FB1FED7EF600D6FDA5 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -343,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32D75F52006E41700DC2F7C /* SettingValueCell.xib in Resources */,
 				C3FB53CF1FFED02F007955F4 /* res_btn_mic_off.png in Resources */,
 				C3FB53D01FFED02F007955F4 /* res_btn_camera_rotate.png in Resources */,
 				C3FB53D11FFED02F007955F4 /* res_background.png in Resources */,
@@ -421,11 +462,15 @@
 				C3FB540620004D34007955F4 /* LLSimpleCamera+Helper.m in Sources */,
 				C3FB541F2002F358007955F4 /* VideoCell.m in Sources */,
 				C33B960A1FED7EF600D6FDA5 /* DashCamera.xcdatamodeld in Sources */,
+				C34168D3200F47200037275B /* VideoTableRecord.m in Sources */,
 				C3FB542620031960007955F4 /* Tools.m in Sources */,
+				C3031538200B5A7E0049EBE8 /* MenuViewController.m in Sources */,
 				C3FB54192002CFC5007955F4 /* SettingTableViewCell.m in Sources */,
 				C33B96121FED7EF600D6FDA5 /* main.m in Sources */,
+				C32D75F42006E41700DC2F7C /* SettingValueCell.m in Sources */,
 				C33B96011FED7EF600D6FDA5 /* AppDelegate.m in Sources */,
 				C3FB540520004D34007955F4 /* UIImage+FixOrientation.m in Sources */,
+				C32D75EF2006062000DC2F7C /* AppSetting.m in Sources */,
 				C3FB53E41FFF0161007955F4 /* CameraAndPhoto.m in Sources */,
 				C3FB540720004D34007955F4 /* LLSimpleCamera.m in Sources */,
 				C3FB54142002C514007955F4 /* VideoListViewController.m in Sources */,
@@ -434,6 +479,7 @@
 				C3FB53DA1FFEFEB8007955F4 /* ViewController.m in Sources */,
 				C3FB541C2002E3FE007955F4 /* VideoViewController.m in Sources */,
 				C3FB53E11FFF00EF007955F4 /* BootupViewController.m in Sources */,
+				C34168CF200E88790037275B /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,14 +614,16 @@
 			baseConfigurationReference = 48E8BBF94F5ED80C2EAEA508 /* Pods-DashCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = D4J7AW2S69;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H4945J547;
 				INFOPLIST_FILE = DashCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wac.DashCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whdiyo.dashcam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8cea259d-8bca-404e-b0bd-534ac728bb88";
-				PROVISIONING_PROFILE_SPECIFIER = All_Dev_160129;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -585,14 +633,16 @@
 			baseConfigurationReference = CAE1314F4F38F63B0082DB3E /* Pods-DashCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = D4J7AW2S69;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H4945J547;
 				INFOPLIST_FILE = DashCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wac.DashCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whdiyo.dashcam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8cea259d-8bca-404e-b0bd-534ac728bb88";
-				PROVISIONING_PROFILE_SPECIFIER = All_Dev_160129;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

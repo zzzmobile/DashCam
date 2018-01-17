@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "DBManager.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
+#import <FMDB.h>
 
 @interface AppDelegate ()
 
@@ -19,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-6714239015427657~6642668315"];
+    [[DBManager instance] openDatabase];
     return YES;
 }
 
@@ -48,9 +51,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
+    [[DBManager instance] closeDatabase];
     [self saveContext];
 }
-
 
 #pragma mark - Core Data stack
 

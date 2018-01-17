@@ -7,5 +7,6 @@ target 'DashCamera' do
 
   # Pods for DashCamera
   pod 'Google-Mobile-Ads-SDK'
+  pod 'FMDB'
 
 end
