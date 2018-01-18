@@ -164,9 +164,9 @@ typedef NS_ENUM(NSInteger, SectionType)
     settingTableData = [NSMutableArray array];
     [settingTableData addObject:@"Unit of Speed"];
     [settingTableData addObject:@"Loop Time(seconds)"];
-    [settingTableData addObject:@"Auto Record"];
+    [settingTableData addObject:@"Auto Record (coming soon)"];
     [settingTableData addObject:@"Delete All Videos"];
-    [settingTableData addObject:@"Advanced"];
+    [settingTableData addObject:@"Advanced (coming soon)"];
     
     [self.tblSetting registerNib:[UINib nibWithNibName:@"SettingValueCell" bundle:nil] forCellReuseIdentifier:[SettingValueCell reuseIdentifier]];
 }
@@ -220,8 +220,14 @@ typedef NS_ENUM(NSInteger, SectionType)
         [cell setCellIntegerValue:[AppSetting getRecordLoopTime]];
     } else if (indexPath.row == SectionType_AutoRecord) {
         [cell setCellBoolValue:[AppSetting isAutoRecord]];
+        [cell.tableCellName setTextColor:[UIColor grayColor]];
+        cell.userInteractionEnabled = NO;
+    } else if (indexPath.row == SectionType_DeleteAllVideos){
+        [cell setCellStringValue:@""];
     } else {
         [cell setCellStringValue:@""];
+        [cell.tableCellName setTextColor:[UIColor grayColor]];
+        cell.userInteractionEnabled = NO;
     }
     
     return cell;

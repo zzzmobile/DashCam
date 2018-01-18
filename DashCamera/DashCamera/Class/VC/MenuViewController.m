@@ -123,8 +123,10 @@ typedef NS_ENUM(NSInteger, SectionType)
         title = @"Settings";
     else if (indexPath.row == SectionType_SavedVideos)
         title = @"Saved Videos";
-    else
-        title = @"Log/History";
+    else {
+        title = @"Log/History (coming soon)";
+        cell.userInteractionEnabled = NO;
+    }
 
     UIFont *font = [UIFont systemFontOfSize:20];
     [cell.textLabel setFont:font];
