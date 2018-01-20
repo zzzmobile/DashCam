@@ -13,11 +13,13 @@
 static NSString* const settingSpeedUnitKey  = @"Setting_SpeedUnit";
 static NSString* const settingLoopTimeKey  = @"Setting_LoopTime";
 static NSString* const settingAutoRecordKey  = @"Setting_AutoRecord";
+static NSString* const settingVideoSettingKey  = @"Setting_VideoSetting";
 
 @implementation AppSetting
 
 + (void)initSetting
 {
+    [DEFAULTS setInteger:VideoQualityLow forKey:settingVideoSettingKey];
     [DEFAULTS setInteger:MeterPerHour forKey:settingSpeedUnitKey];
     [DEFAULTS setInteger:5 forKey:settingLoopTimeKey];
     [DEFAULTS setBool:NO forKey:settingAutoRecordKey];
@@ -56,6 +58,18 @@ static NSString* const settingAutoRecordKey  = @"Setting_AutoRecord";
     [DEFAULTS setBool:autoRecord forKey:settingAutoRecordKey];
     [DEFAULTS synchronize];
 }
+
++ (NSInteger)getVideoSetting
+{
+    return [DEFAULTS integerForKey:settingVideoSettingKey];
+}
+
++ (void)setVideoSetting:(NSInteger)setting
+{
+    [DEFAULTS setInteger:setting forKey:settingVideoSettingKey];
+    [DEFAULTS synchronize];
+}
+
 
 + (BOOL)isSetted
 {

@@ -25,7 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;
 @property (weak, nonatomic) IBOutlet UIButton *btnSave;
 
-@property (weak, nonatomic) IBOutlet UIView *adsBannerView;
+@property (weak, nonatomic) IBOutlet UIView *googleAdsView;
+@property (weak, nonatomic) IBOutlet UIView *adViewFrame;
+
 
 @property (weak, nonatomic) IBOutlet UIView *vwRecTime;
 @property (weak, nonatomic) IBOutlet UIView *vwTraffic;
@@ -40,7 +42,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *pCameraView;
-@property (weak, nonatomic) IBOutlet UIView *pAdsView;
 @property (weak, nonatomic) IBOutlet UIView *pOperationBar;
 @property (weak, nonatomic) IBOutlet UILabel *pLblStatus;
 @property (weak, nonatomic) IBOutlet UIButton *pBtnMute;

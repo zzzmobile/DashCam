@@ -17,7 +17,7 @@
         self.eLatitude = 0.0;
         self.eLongitude = 0.0;
     }
-    
+
     - (void)setValuesName:(NSString*)name sLat:(NSInteger)slat sLon:(NSInteger)slon eLat:(NSInteger)elat eLon:(NSInteger)elon {
         self.videoName = name;
         self.sLatitude = slat / 1000000.0;
@@ -25,21 +25,19 @@
         self.eLatitude = elat / 1000000.0;
         self.eLongitude = elon / 1000000.0;
     }
-    
+
     - (NSString*)getStartLocation {
         NSString *startLat = [self getLocationString:self.sLatitude];
         NSString *startLon = [self getLocationString:self.sLongitude];
-
         return [startLat stringByAppendingString:[@" N, " stringByAppendingString:[startLon stringByAppendingString:@" W"]]];
     }
 
     - (NSString*)getEndLocation {
         NSString *endLat = [self getLocationString:self.sLatitude];
         NSString *endLon = [self getLocationString:self.sLongitude];
-        
         return [endLat stringByAppendingString:[@" N, " stringByAppendingString:[endLon stringByAppendingString:@" W"]]];
     }
-    
+
     - (NSString*)getLocationString:(double)location {
         int degree = (int)location;
         double dblMinute = location - degree;
@@ -48,8 +46,8 @@
         NSString *sDegree = [NSString stringWithFormat:@"%i° ", degree];
         NSString *sMinute = [NSString stringWithFormat:@"%02d′ ", minute];
         NSString *sSecond = [NSString stringWithFormat:@"%02.1f”", second];
-        
+
         return [sDegree stringByAppendingString:[sMinute stringByAppendingString:sSecond]];
     }
-    
+
 @end

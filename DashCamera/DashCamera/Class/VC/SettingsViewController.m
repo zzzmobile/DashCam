@@ -13,6 +13,7 @@
 #import "SettingValueCell.h"
 #import "AppSetting.h"
 #import "DBManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @import GoogleMobileAds;
 
@@ -22,6 +23,7 @@
     UIAlertController *alertUnitSpeed;
     UIAlertController *alertLoopTime;
     UIAlertController *alertAutoRecord;
+    UIAlertController *alertVideoSetting;
     UIAlertController *alertAllDelete;
 }
 
@@ -36,6 +38,7 @@ typedef NS_ENUM(NSInteger, SectionType)
     SectionType_UnitOfSpeed = 0,
     SectionType_LoopTime,
     SectionType_AutoRecord,
+    SectionType_VideoSetting,
     SectionType_DeleteAllVideos,
     SectionType_Advanced
 };
@@ -62,6 +65,7 @@ typedef NS_ENUM(NSInteger, SectionType)
     [self makeUnitofSpeedAlert];
     [self makeLoopTimeAlert];
     [self makeAutoRecordAlert];
+    [self makeVideoSettingAlert];
     [self makeAllDeleteAlert];
 }
 
@@ -147,6 +151,31 @@ typedef NS_ENUM(NSInteger, SectionType)
     [alertAutoRecord addAction:noAction];
 }
 
+- (void)makeVideoSettingAlert {
+    // Alert for Video Setting
+    alertVideoSetting = [UIAlertController alertControllerWithTitle:@"Video Quality" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertVideoSetting dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *highAction = [UIAlertAction actionWithTitle:@"High" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [AppSetting setVideoSetting:VideoQualityHigh];
+        [self.tblSetting reloadData];
+    }];
+    UIAlertAction *mediumAction = [UIAlertAction actionWithTitle:@"Medium" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [AppSetting setVideoSetting:VideoQualityMedium];
+        [self.tblSetting reloadData];
+    }];
+    UIAlertAction *lowAction = [UIAlertAction actionWithTitle:@"Low" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [AppSetting setVideoSetting:VideoQualityLow];
+        [self.tblSetting reloadData];
+    }];
+
+    [alertVideoSetting addAction:highAction];
+    [alertVideoSetting addAction:mediumAction];
+    [alertVideoSetting addAction:lowAction];
+    [alertVideoSetting addAction:cancelAction];
+}
+
 - (void)makeAllDeleteAlert {
     alertAllDelete = [UIAlertController alertControllerWithTitle:@"Delete All Videos" message:@"Are you sure you want to delete all videos?" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelDeleteAct = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -165,6 +194,7 @@ typedef NS_ENUM(NSInteger, SectionType)
     [settingTableData addObject:@"Unit of Speed"];
     [settingTableData addObject:@"Loop Time(seconds)"];
     [settingTableData addObject:@"Auto Record (coming soon)"];
+    [settingTableData addObject:@"Video Setting"];
     [settingTableData addObject:@"Delete All Videos"];
     [settingTableData addObject:@"Advanced (coming soon)"];
     
@@ -209,8 +239,8 @@ typedef NS_ENUM(NSInteger, SectionType)
     SettingValueCell* cell = (SettingValueCell*)[self.tblSetting dequeueReusableCellWithIdentifier:[SettingValueCell reuseIdentifier] forIndexPath:indexPath];
     [cell setCellTitle:cellTitle];
 
+    NSString* strValue = @"";
     if (indexPath.row == SectionType_UnitOfSpeed) {
-        NSString* strValue = @"";
         if ([AppSetting getSpeedUnit] == MeterPerHour)
             strValue = @"(MPH)";
         else
@@ -223,9 +253,19 @@ typedef NS_ENUM(NSInteger, SectionType)
         [cell.tableCellName setTextColor:[UIColor grayColor]];
         cell.userInteractionEnabled = NO;
     } else if (indexPath.row == SectionType_DeleteAllVideos){
-        [cell setCellStringValue:@""];
+        [cell setCellStringValue:strValue];
+    } else if (indexPath.row == SectionType_VideoSetting) {
+        if ([AppSetting getVideoSetting] == VideoQualityHigh)
+            strValue = @"High";
+        else if ([AppSetting getVideoSetting] == VideoQualityMedium)
+            strValue = @"Medium";
+        else if ([AppSetting getVideoSetting] == VideoQualityLow)
+            strValue = @"Low";
+        else
+            strValue = @"High";
+        [cell setCellStringValue:strValue];
     } else {
-        [cell setCellStringValue:@""];
+        [cell setCellStringValue:strValue];
         [cell.tableCellName setTextColor:[UIColor grayColor]];
         cell.userInteractionEnabled = NO;
     }
@@ -246,6 +286,8 @@ typedef NS_ENUM(NSInteger, SectionType)
         [self presentViewController:alertLoopTime animated:YES completion:nil];
     } else if (indexPath.row == SectionType_AutoRecord) {
         [self presentViewController:alertAutoRecord animated:YES completion:nil];
+    } else if (indexPath.row == SectionType_VideoSetting) {
+        [self presentViewController:alertVideoSetting animated:YES completion:nil];
     } else if (indexPath.row == SectionType_DeleteAllVideos) {
         [self presentViewController:alertAllDelete animated:YES completion:nil];
     }

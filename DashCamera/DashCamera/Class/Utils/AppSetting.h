@@ -14,6 +14,12 @@ typedef enum : NSUInteger {
     KilometerPerHour
 } AppSpeedUnit;
 
+typedef enum: NSUInteger {
+    VideoQualityHigh,
+    VideoQualityMedium,
+    VideoQualityLow
+} AppVideoSetting;
+
 @interface AppSetting : NSObject
 
 + (void)initSetting;
@@ -23,6 +29,8 @@ typedef enum : NSUInteger {
 + (void)setRecordLoopTime:(NSInteger)seconds;
 + (BOOL)isAutoRecord;
 + (void)setAutoRecord:(BOOL)autoRecord;
++ (NSInteger)getVideoSetting;
++ (void)setVideoSetting:(NSInteger)setting;
 
 + (BOOL)isSetted;
 

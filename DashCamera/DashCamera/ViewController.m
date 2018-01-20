@@ -49,7 +49,6 @@
 @property (assign, nonatomic) BOOL noSound;
 @property (assign, nonatomic) BOOL captureVideo;
 @property (nonatomic, strong) GADBannerView *bannerView;
-@property (nonatomic, strong) GADBannerView *pBannerView;
 
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 
@@ -92,12 +91,21 @@
     - (void)initialize
     {
         CGRect screenRect = [[UIScreen mainScreen] bounds];
-        self.camera = [[LLSimpleCamera alloc] initWithQuality:AVCaptureSessionPresetHigh position:LLCameraPositionRear videoEnabled:YES];
+        AVCaptureSessionPreset sessionPreset = AVCaptureSessionPresetLow;
+        if ([AppSetting getVideoSetting] == VideoQualityHigh) {
+            sessionPreset = AVCaptureSessionPresetHigh;
+        } else if ([AppSetting getVideoSetting] == VideoQualityMedium) {
+            sessionPreset = AVCaptureSessionPresetMedium;
+        } else {
+            sessionPreset = AVCaptureSessionPresetLow;
+        }
+        self.camera = [[LLSimpleCamera alloc] initWithQuality:sessionPreset position:LLCameraPositionRear videoEnabled:YES];
         [self.camera attachToViewController:self withFrame:CGRectMake(0, 0, screenRect.size.width, screenRect.size.height)];
         self.camera.fixOrientationAfterCapture = NO;
 
         [self.view bringSubviewToFront:self.landscapeView];
         [self.view bringSubviewToFront:self.portraitView];
+        [self.view bringSubviewToFront:self.adViewFrame];
 
         self.dateFormatter = [[NSDateFormatter alloc] init];
         [self.dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -137,6 +145,7 @@
             }
             [self.camera.view setFrame:rect];
         }
+        [self.view bringSubviewToFront:self.adViewFrame];
     }
 
     - (void)initButtons
@@ -167,18 +176,8 @@
         self.bannerView.delegate = self;
         [self.bannerView loadRequest:[GADRequest request]];
         
-        [self.adsBannerView addSubview:self.bannerView];
-        self.adsBannerView = self.bannerView;
-
-        self.pBannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-        self.pBannerView.adUnitID = @"ca-app-pub-6714239015427657/9815626562";
-        self.pBannerView.rootViewController = self;
-        self.pBannerView.delegate = self;
-        [self.pBannerView loadRequest:[GADRequest request]];
-        
-        [self.pAdsView addSubview:self.pBannerView];
-        self.pAdsView = self.pBannerView;
-
+        [self.googleAdsView addSubview:self.bannerView];
+        self.googleAdsView = self.bannerView;
     }
 
     - (void)initLocationManager
@@ -199,17 +198,6 @@
         }
     }
 
-
-    - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
-        bannerView.alpha = 0;
-        [UIView animateWithDuration:1.0 animations:^{
-            bannerView.alpha = 1;
-        }];
-    }
-
-    - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
-    }
-
     //function to hide the status bar, need to add key in Info.plist
     - (BOOL)prefersStatusBarHidden {
         return YES;
@@ -219,7 +207,6 @@
     {
         self.navigationController.navigationBarHidden = YES;
         [self initialize];
-    //    [self rotateView];
         [self.camera start];
         [self showGoogleVideo];
     }
@@ -432,12 +419,14 @@
     {
         NSString *strSpeed = @"";
         NSInteger speedUnit = [AppSetting getSpeedUnit];
+        if (carSpeed < 0)
+            carSpeed = 0;
         if (speedUnit == MeterPerHour) {
-            int mph = (int)(carSpeed / 3600);
-            strSpeed = [NSString stringWithFormat:@"%i MPH", mph];
+            double mph = carSpeed / 3600.0;
+            strSpeed = [NSString stringWithFormat:@"%.1f MPH", mph];
         } else {
-            int kph = (int)(carSpeed / (3600 * 1000));
-            strSpeed = [NSString stringWithFormat:@"%i KPH", kph];
+            double kph = carSpeed / (3600.0 * 1000.0);
+            strSpeed = [NSString stringWithFormat:@"%.1f KPH", kph];
         }
 
         [self.lblSpeed setText:strSpeed];
@@ -486,6 +475,11 @@
         [self.pProgressView setProgress:progress];
 
         int minutes = (int)(freeSize / 2) / 60;
+        if ([AppSetting getVideoSetting] == VideoQualityMedium) {
+            minutes = minutes * 2;
+        } else if ([AppSetting getVideoSetting] == VideoQualityLow) {
+            minutes = minutes * 3;
+        }
         NSString *strMinutes = [NSString stringWithFormat:@"(%i minutes)", minutes];
         NSString *strUnit = @"MB  ";
         NSString *strFree = @"";
@@ -493,6 +487,7 @@
             strUnit = @"GB  ";
             freeSize = freeSize / 1024;
         }
+        
         strFree = [NSString stringWithFormat:@"Available : %.1f", freeSize];
         strFree = [strFree stringByAppendingString:strUnit];
 
