@@ -19,9 +19,9 @@ static NSString* const settingVideoSettingKey  = @"Setting_VideoSetting";
 
 + (void)initSetting
 {
-    [DEFAULTS setInteger:VideoQualityLow forKey:settingVideoSettingKey];
+    [DEFAULTS setInteger:VideoQualityMedium forKey:settingVideoSettingKey];
     [DEFAULTS setInteger:MeterPerHour forKey:settingSpeedUnitKey];
-    [DEFAULTS setInteger:5 forKey:settingLoopTimeKey];
+    [DEFAULTS setInteger:600 forKey:settingLoopTimeKey];
     [DEFAULTS setBool:NO forKey:settingAutoRecordKey];
     [DEFAULTS synchronize];
 }

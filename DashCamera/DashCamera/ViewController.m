@@ -422,10 +422,10 @@
         if (carSpeed < 0)
             carSpeed = 0;
         if (speedUnit == MeterPerHour) {
-            double mph = carSpeed / 3600.0;
+            double mph = carSpeed * 3600.0;
             strSpeed = [NSString stringWithFormat:@"%.1f MPH", mph];
         } else {
-            double kph = carSpeed / (3600.0 * 1000.0);
+            double kph = carSpeed * 3600.0 / 1000.0;
             strSpeed = [NSString stringWithFormat:@"%.1f KPH", kph];
         }
 

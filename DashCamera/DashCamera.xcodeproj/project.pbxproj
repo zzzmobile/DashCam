@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07CAC9C3A6565DAF0AA1CFFB /* libPods-DashCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8041DDC497E6A9BD63F2566 /* libPods-DashCamera.a */; };
 		C3031538200B5A7E0049EBE8 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3031537200B5A7E0049EBE8 /* MenuViewController.m */; };
+		C31874F2201FA5D700B321F2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C31874F0201FA5D600B321F2 /* logo.png */; };
+		C31874F3201FA5D700B321F2 /* res_btn_start.png in Resources */ = {isa = PBXBuildFile; fileRef = C31874F1201FA5D600B321F2 /* res_btn_start.png */; };
 		C32D75EF2006062000DC2F7C /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C32D75EE2006062000DC2F7C /* AppSetting.m */; };
 		C32D75F42006E41700DC2F7C /* SettingValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C32D75F22006E41700DC2F7C /* SettingValueCell.m */; };
 		C32D75F52006E41700DC2F7C /* SettingValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32D75F32006E41700DC2F7C /* SettingValueCell.xib */; };
@@ -61,6 +63,8 @@
 		48E8BBF94F5ED80C2EAEA508 /* Pods-DashCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DashCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DashCamera/Pods-DashCamera.debug.xcconfig"; sourceTree = "<group>"; };
 		C3031536200B5A7E0049EBE8 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Class/VC/MenuViewController.h; sourceTree = "<group>"; };
 		C3031537200B5A7E0049EBE8 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Class/VC/MenuViewController.m; sourceTree = "<group>"; };
+		C31874F0201FA5D600B321F2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = DashCamera/Resources/logo.png; sourceTree = "<group>"; };
+		C31874F1201FA5D600B321F2 /* res_btn_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = res_btn_start.png; path = DashCamera/Resources/res_btn_start.png; sourceTree = "<group>"; };
 		C32D75ED2006062000DC2F7C /* AppSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppSetting.h; path = Class/Utils/AppSetting.h; sourceTree = "<group>"; };
 		C32D75EE2006062000DC2F7C /* AppSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppSetting.m; path = Class/Utils/AppSetting.m; sourceTree = "<group>"; };
 		C32D75F12006E41700DC2F7C /* SettingValueCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SettingValueCell.h; path = DashCamera/Class/View/SettingValueCell.h; sourceTree = SOURCE_ROOT; };
@@ -160,6 +164,8 @@
 		C33B95F31FED7EF600D6FDA5 = {
 			isa = PBXGroup;
 			children = (
+				C31874F0201FA5D600B321F2 /* logo.png */,
+				C31874F1201FA5D600B321F2 /* res_btn_start.png */,
 				C33B95FE1FED7EF600D6FDA5 /* DashCamera */,
 				C33B95FD1FED7EF600D6FDA5 /* Products */,
 				C33B96181FED908200D6FDA5 /* Frameworks */,
@@ -383,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31874F2201FA5D700B321F2 /* logo.png in Resources */,
+				C31874F3201FA5D700B321F2 /* res_btn_start.png in Resources */,
 				C32D75F52006E41700DC2F7C /* SettingValueCell.xib in Resources */,
 				C3FB53CF1FFED02F007955F4 /* res_btn_mic_off.png in Resources */,
 				C3FB53D01FFED02F007955F4 /* res_btn_camera_rotate.png in Resources */,
